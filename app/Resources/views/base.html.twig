@@ -1,11 +1,10 @@
-<!-- app/Resources/views/base.html.twig -->
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
         <title>{% block title %}symblog{% endblock %} - symblog</title>
         <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js></script>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         {% block stylesheets %}
             <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
@@ -22,8 +21,8 @@
                     {% block navigation %}
                         <nav>
                             <ul class="navigation">
-                                <li><a href="{{ path('homepage') }}">Home</a></li>
-                                <li><a href="{{ path('about') }}">About</a></li>
+                                <li><a href="{{ path('BloggerBlogBundle_homepage') }}">Home</a></li>
+                                <li><a href="{{ path('BloggerBlogBundle_about') }}">About</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
                         </nav>

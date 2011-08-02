@@ -1,7 +1,11 @@
-homepage:
+BloggerBlogBundle_homepage:
     pattern:  /
     defaults: { _controller: BloggerBlogBundle:Page:index }
-    
-about:
+    requirements:
+        _method:  GET
+        
+BloggerBlogBundle_about:
     pattern:  /about
     defaults: { _controller: BloggerBlogBundle:Page:about }
+    requirements:
+        _method:  GET
