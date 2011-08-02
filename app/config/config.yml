@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
+    - { resource: @BloggerBlogBundle/Resources/config/config.yml }
 
 framework:
     #esi:             ~

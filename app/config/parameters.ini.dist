@@ -9,10 +9,12 @@
     database_user     = root
     database_password =
 
-    mailer_transport  = smtp
-    mailer_host       = localhost
-    mailer_user       =
-    mailer_password   =
+    mailer_transport="gmail"
+    mailer_encryption="ssl"
+    mailer_auth_mode="login"
+    mailer_host="smtp.gmail.com"
+    mailer_user="username"
+    mailer_password="password"
 
     locale            = en
 

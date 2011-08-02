@@ -9,3 +9,9 @@ BloggerBlogBundle_about:
     defaults: { _controller: BloggerBlogBundle:Page:about }
     requirements:
         _method:  GET
+        
+BloggerBlogBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: BloggerBlogBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
