@@ -1,0 +1,6 @@
+{% block title %}Add Comment{% endblock%}
+
+{% block body %}
+    <h1>Add comment for blog post "{{ comment.blog.title }}"</h1>
+    {% include 'BloggerBlogBundle:Comment:form.html.twig' with { 'form': form } %}
+{% endblock %}

@@ -13,4 +13,14 @@
             <p>{{ blog.blog }}</p>
         </div>
     </article>
+    
+    <section class="comments" id="comments">
+        <section class="previous-comments">
+            <h3>Comments</h3>
+            {% include 'BloggerBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
+        </section>
+        
+        <h3>Add Comment</h3>
+        {% render 'BloggerBlogBundle:Comment:new' with { 'blog_id': blog.id } %}
+    </section>
 {% endblock %}

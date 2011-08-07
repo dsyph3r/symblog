@@ -17,3 +17,10 @@ form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
 .blog .meta { font-style: italic; font-size: 12px; color: #666; }
 .blog .meta p { margin-bottom: 5px; line-height: 1.2em; }
 .blog img.large { width: 300px; min-height: 165px; }
+
+.comments { clear: both; }
+.comments .odd { background: #eee; }
+.comments .comment { padding: 20px; }
+.comments .comment p { margin-bottom: 0; }
+.comments h3 { background: #eee; padding: 10px; font-size: 20px; margin-bottom: 20px; clear: both; }
+.comments .previous-comments { margin-bottom: 20px; }

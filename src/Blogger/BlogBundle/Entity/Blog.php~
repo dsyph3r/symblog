@@ -59,7 +59,6 @@ class Blog
      */
     protected $updated;
 
-    
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -85,11 +84,6 @@ class Blog
        $this->setUpdated(new \DateTime());
     }
     
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
-
     /**
      * Get id
      *
@@ -241,25 +235,5 @@ class Blog
     public function getUpdated()
     {
         return $this->updated;
-    }
-
-    /**
-     * Add comments
-     *
-     * @param Blogger\BlogBundle\Entity\Comment $comments
-     */
-    public function addComments(\Blogger\BlogBundle\Entity\Comment $comments)
-    {
-        $this->comments[] = $comments;
-    }
-
-    /**
-     * Get comments
-     *
-     * @return Doctrine\Common\Collections\Collection 
-     */
-    public function getComments()
-    {
-        return $this->comments;
     }
 }
