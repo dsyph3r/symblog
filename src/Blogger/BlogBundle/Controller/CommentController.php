@@ -42,7 +42,8 @@ class CommentController extends Controller
             $em->flush();
                 
             return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
-                'id' => $comment->getBlog()->getId())) .
+                'id'    => $comment->getBlog()->getId(),
+                'slug'  => $comment->getBlog()->getSlug())) .
                 '#comment-' . $comment->getId()
             );
         }
