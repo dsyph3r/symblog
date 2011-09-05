@@ -25,6 +25,11 @@ class Blog
     protected $title;
     
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $slug;
+    
+    /**
      * @ORM\Column(type="string", length=100)
      */
     protected $author;
@@ -90,6 +95,34 @@ class Blog
         return $this->getTitle();
     }
 
+    public function slugify($text)
+    {
+        // replace non letter or digits by -
+        $text = preg_replace('#[^\\pL\d]+#u', '-', $text);
+
+        // trim
+        $text = trim($text, '-');
+
+        // transliterate
+        if (function_exists('iconv'))
+        {
+            $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        }
+
+        // lowercase
+        $text = strtolower($text);
+
+        // remove unwanted characters
+        $text = preg_replace('#[^-\w]+#', '', $text);
+
+        if (empty($text))
+        {
+            return 'n-a';
+        }
+
+        return $text;
+    }
+    
     /**
      * Get id
      *
@@ -108,6 +141,8 @@ class Blog
     public function setTitle($title)
     {
         $this->title = $title;
+
+        $this->setSlug($this->title);
     }
 
     /**
@@ -261,5 +296,35 @@ class Blog
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $this->slugify($slug);
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param Blogger\BlogBundle\Entity\Comment $comments
+     */
+    public function addComment(\Blogger\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
     }
 }
