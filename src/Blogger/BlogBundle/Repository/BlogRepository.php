@@ -16,7 +16,7 @@ class BlogRepository extends EntityRepository
     {
         $qb = $this->createQueryBuilder('b')
                    ->select('b, c')
-                   ->innerJoin('b.comments', 'c')
+                   ->leftJoin('b.comments', 'c')
                    ->addOrderBy('b.created', 'DESC');
     
         if (false === is_null($limit))
