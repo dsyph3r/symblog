@@ -19,7 +19,17 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-
+        <a href="https://github.com/dsyph3r/symblog">
+            <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/6429057dfef9e98189338d22e7f6646c6694f032/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub">
+        </a>
+        
+        <div id="demo-notice">
+            This is a demo website for the Symfony2 
+            <a href="http://tutorial.symblog.dev">symblog tutorial</a>. The source
+            code for this website is available on <a href="https://github.com/dsyph3r/symblog">GitHub</a>.<br />
+            The contents of this website are reset daily.
+        </div>
+        
         <section id="wrapper">
             <header id="header">
                 <div class="top">
@@ -49,11 +59,24 @@
 
             <div id="footer">
                 {% block footer %}
-                    Symfony2 blog tutorial - created by <a href="https://github.com/dsyph3r">dsyph3r</a>
+                    Symfony2 blog tutorial - created by <a href="https://twitter.com/#!/dsyph3r">dsyph3r</a>
                 {% endblock %}
             </div>
         </section>
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-17277387-3']);
+                _gaq.push(['_trackPageview']);
+              
+                (function() {
+                  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+              
+            </script>    
+        {% endblock %}
     </body>
 </html>
