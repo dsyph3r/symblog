@@ -1,9 +1,15 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('bundles/bloggerblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/bloggerblog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+    {{ parent () }}
+
+    {% stylesheets 
+        '@BloggerBlogBundle/Resources/public/css/*'
+        output='css/blogger.css'
+        filter='?yui_css'
+    %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
 {% endblock %}
 
 {% block sidebar %}

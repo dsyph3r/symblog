@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
-    #RewriteBase /
+    RewriteBase /
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ app.php [QSA,L]
