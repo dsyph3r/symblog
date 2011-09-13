@@ -49,18 +49,20 @@ class BlogRepository extends EntityRepository
     
     public function getTagWeights($tags)
     {
-        $max  = 1;
         $tagWeights = array();
+        if (empty($tags))
+            return $tagWeights;
+        
         foreach ($tags as $tag)
         {
             $tagWeights[$tag] = (isset($tagWeights[$tag])) ? $tagWeights[$tag] + 1 : 1;
-            if ($tagWeights[$tag] > $max)
-                $max = $tagWeights[$tag];
         }
         // Shuffle the tags
         uksort($tagWeights, function() {
             return rand() > rand();
         });
+        
+        $max = max($tagWeights);
         
         // Max of 5 weights
         $multiplier = ($max > 5) ? 5 / $max : 1;
