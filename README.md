@@ -20,7 +20,7 @@ The demo site for this project can be found at http://symblog.co.uk
  6. Update schema with 'php app/console doctrine:schema:create'
  7. Load fixtures with 'php app/console doctrine:fixtures:load'
 
-## Updating to Symfony 2.0.1
+## Updating to Symfony 2.0.3
 
 If you already have a clone of the repo you will need to update your vendors by running
 
@@ -29,5 +29,5 @@ $ php bin/vendors install
 $ php ./app/console cache:clear
 ```
 
-More information can be found on the [Symfony 2 blog](http://symfony.com/blog/symfony-2-0-1-released)
+More information can be found on the [Symfony 2 blog](http://symfony.com/blog/symfony-2-0-3-released)
 

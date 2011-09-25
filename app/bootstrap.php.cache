@@ -456,7 +456,7 @@ abstract class Kernel implements KernelInterface
     protected $startTime;
     protected $classes;
 
-    const VERSION = '2.0.1';
+    const VERSION = '2.0.3';
 
     
     public function __construct($environment, $debug)
@@ -992,7 +992,7 @@ class ClassCollectionLoader
         $files = array();
         $content = '';
         foreach ($classes as $class) {
-            if (!class_exists($class) && !interface_exists($class)) {
+            if (!class_exists($class) && !interface_exists($class) && function_exists('trait_exists') && !trait_exists($class)) {
                 throw new \InvalidArgumentException(sprintf('Unable to load class "%s"', $class));
             }
 
