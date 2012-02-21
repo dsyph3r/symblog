@@ -9,7 +9,7 @@ use Blogger\BlogBundle\Entity\Blog;
 
 class CommentFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load($manager)
+    public function load(\Doctrine\Common\Persistence\ObjectManager $manager)
     {
         $comment = new Comment();
         $comment->setUser('symfony');

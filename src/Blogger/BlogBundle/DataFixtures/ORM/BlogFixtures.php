@@ -8,7 +8,7 @@ use Blogger\BlogBundle\Entity\Blog;
 
 class BlogFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load($manager)
+    public function load(\Doctrine\Common\Persistence\ObjectManager $manager)
     {
         $blog1 = new Blog();
         $blog1->setTitle('A day with Symfony2');
