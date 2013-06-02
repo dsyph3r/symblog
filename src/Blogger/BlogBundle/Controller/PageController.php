@@ -11,7 +11,7 @@ class PageController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()
-                   ->getEntityManager();
+                   ->getManager();
 
         $blogs = $em->getRepository('BloggerBlogBundle:Blog')
                     ->getLatestBlogs();
@@ -33,7 +33,7 @@ class PageController extends Controller
     
         $request = $this->getRequest();
         if ($request->getMethod() == 'POST') {
-            $form->bindRequest($request);
+            $form->bind($request);
     
             if ($form->isValid()) {
                 $message = \Swift_Message::newInstance()
@@ -59,7 +59,7 @@ class PageController extends Controller
     public function sidebarAction()
     {
         $em = $this->getDoctrine()
-                   ->getEntityManager();
+                   ->getManager();
     
         $tags = $em->getRepository('BloggerBlogBundle:Blog')
                    ->getTags();

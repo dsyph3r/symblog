@@ -21,6 +21,6 @@
         </section>
         
         <h3>Add Comment</h3>
-        {% render 'BloggerBlogBundle:Comment:new' with { 'blog_id': blog.id } %}
+        {% render url('BloggerBlogBundle_comment_new', { 'blog_id': blog.id }) %}
     </section>
 {% endblock %}
