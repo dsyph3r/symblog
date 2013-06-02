@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function showAction($id, $slug)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $blog = $em->getRepository('BloggerBlogBundle:Blog')->find($id);
 
