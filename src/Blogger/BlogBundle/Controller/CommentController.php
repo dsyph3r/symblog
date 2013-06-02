@@ -33,7 +33,7 @@ class CommentController extends Controller
         $comment->setBlog($blog);
         $request = $this->getRequest();
         $form    = $this->createForm(new CommentType(), $comment);
-        $form->bindRequest($request);
+        $form->bind($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()
