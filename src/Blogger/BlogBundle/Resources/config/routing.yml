@@ -10,6 +10,12 @@ BloggerBlogBundle_about:
     requirements:
         _method:  GET
         
+BloggerBlogBundle_sidebar:
+    pattern:  /sidebar
+    defaults: { _controller: BloggerBlogBundle:Page:sidebar }
+    requirements:
+        _method:  GET
+        
 BloggerBlogBundle_contact:
     pattern:  /contact
     defaults: { _controller: BloggerBlogBundle:Page:contact }
