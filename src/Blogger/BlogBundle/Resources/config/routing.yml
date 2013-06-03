@@ -10,6 +10,12 @@ BloggerBlogBundle_about:
     requirements:
         _method:  GET
         
+BloggerBlogBundle_sidebar:
+    pattern:  /sidebar
+    defaults: { _controller: BloggerBlogBundle:Page:sidebar }
+    requirements:
+        _method:  GET
+        
 BloggerBlogBundle_contact:
     pattern:  /contact
     defaults: { _controller: BloggerBlogBundle:Page:contact }
@@ -23,9 +29,16 @@ BloggerBlogBundle_blog_show:
         _method:  GET
         id: \d+
 
+BloggerBlogBundle_comment_new:
+    pattern:  /new/{blog_id}
+    defaults: { _controller: BloggerBlogBundle:Comment:new }
+    requirements:
+        _method:  GET
+        blog_id: \d+
+
 BloggerBlogBundle_comment_create:
     pattern:  /comment/{blog_id}
     defaults: { _controller: BloggerBlogBundle:Comment:create }
     requirements:
         _method:  POST
-        id: \d+
+        blog_id: \d+
