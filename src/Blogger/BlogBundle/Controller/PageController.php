@@ -26,14 +26,13 @@ class PageController extends Controller
         return $this->render('BloggerBlogBundle:Page:about.html.twig');
     }
     
-    public function contactAction()
+    public function contactAction(Request $request)
     {
         $enquiry = new Enquiry();
         $form = $this->createForm(new EnquiryType(), $enquiry);
-    
-        $request = $this->getRequest();
+         
         if ($request->getMethod() == 'POST') {
-            $form->bind($request);
+            $form->submit($request);
     
             if ($form->isValid()) {
                 $message = \Swift_Message::newInstance()
