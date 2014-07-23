@@ -25,15 +25,14 @@ class CommentController extends Controller
         ));
     }
 
-    public function createAction($blog_id)
+    public function createAction(Request $request,$blog_id)
     {
         $blog = $this->getBlog($blog_id);
 
         $comment  = new Comment();
         $comment->setBlog($blog);
-        $request = $this->getRequest();
         $form    = $this->createForm(new CommentType(), $comment);
-        $form->bind($request);
+        $form->submit($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()
